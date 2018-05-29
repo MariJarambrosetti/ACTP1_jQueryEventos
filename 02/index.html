@@ -14,9 +14,11 @@
 	tercer link y que dice Snapchat. Se busca que ahora diga Pinterest
 	y que también se le cambie el atributo href para que ahora vaya a la
 	dirección de Pinterest (http://pinterest.com).
+
 	02. Seleccionar todos los link vacíos (que su href sea '#') y prevenir
 	su comportamiento por defecto, o sea que al hacerle click no nos
 	lleve al top de la página.
+
 	03. Modificar el tamaño de todos los h2 que sean hijos directos de la
 	clase header__main y hacerlos el doble de su tamaño.
 
@@ -28,9 +30,10 @@
 	<meta charset="utf-8">
 	<title>Ejercicio 02</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../_assets/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-	<header class="header__main">
+	<header class="header__main"><!-- acaa -->
 		<h2>
 			<a href="#" class="header__logo">Logo de la marca</a>
 		</h2>
@@ -43,6 +46,8 @@
 			</ul>
 		</nav>
 	</header>
+
+
 	<article class="article">
 		<header class="article__header">
 			<h2 class="article__title">Lorem ipsum dolor sit amet, consectetur adipisicing</h2>
@@ -61,6 +66,8 @@
 			<p class="article__text-footer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquam eius harum, vero porro voluptates sunt dolorum quas, iure, dolorem tempora nesciunt saepe alias accusamus nobis aperiam hic beatae, consequuntur.</p>
 		</footer>
 	</article>
+
+
 	<article class="article">
 		<header class="article__header">
 			<h2 class="article__title">A quibusdam, quod repellendus nisi et temporibustium.</h2>
@@ -79,6 +86,8 @@
 			<p class="article__text-footer">Nesciunt quibusdam veniam libero nemo recusandae doloremque consequatur obcaecati ullam neque quaerat itaque veritatis similique natus aperiam maxime nam accusamus nulla sapiente corrupti, amet. Vero esse facere distinctio soluta in?</p>
 		</footer>
 	</article>
+
+
 	<article class="article">
 		<header class="article__header">
 			<h2 class="article__title">Placeat amet, facere quod reiciendis blanditiis maiores</h2>
@@ -97,6 +106,8 @@
 			<p class="article__text-footer">Voluptatibus dignissimos eaque illum molestias similique quod temporibus totam veniam, alias fuga esse iusto laboriosam maxime sequi perferendis quidem error, at aliquam odit sapiente, amet quibusdam magni dolorem nesciunt! Odio.</p>
 		</footer>
 	</article>
+
+
 	<article class="article">
 		<header class="article__header">
 			<h2 class="article__title">A nemo est dignissimos, assumenda in voluptatum</h2>
@@ -115,6 +126,8 @@
 			<p class="article__text-footer">Repudiandae cupiditate ducimus consequuntur, quam in alias! Maiores nam saepe at odio nemo, voluptatum maxime corporis explicabo, fuga iusto. Temporibus omnis sequi odio, cumque voluptatibus a nesciunt natus saepe vel.</p>
 		</footer>
 	</article>
+
+
 	<article class="article">
 		<header class="article__header">
 			<h2 class="article__title">Sunt dolorem tempora accusantium debitis maxime voluptatum veritatis</h2>
@@ -133,8 +146,23 @@
 			<p class="article__text-footer">Laboriosam dolorem explicabo, consequatur, unde dolores eligendi deserunt mollitia consectetur numquam. Quam doloribus omnis eius saepe perspiciatis natus reprehenderit, blanditiis ad quidem, corporis quisquam laboriosam dolores optio? Nam, quis, odio?</p>
 		</footer>
 	</article>
+
+
 	<footer class="footer__main">
 		<p class="footer__legal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sint praesentium laboriosam atque placeat architecto, maxime temporibus sequi veniam quae culpa accusantium dignissimos natus perferendis mollitia quam optio incidunt. Esse!</p>
 	</footer>
+
+	<script>
+		$(document).ready(function (){
+          $('.article__socialnetworks').last().parent().parent().prev().children('.article__body').children('ul').children('li').children('a').eq(2).text('Pinterest').attr('href', 'http://pinterest.com');
+          // $('.article__socialnetworks').last().prev().css('border-radius', '50%')
+
+       	 $('[href="#"]').on('click',function(event){
+        	event.preventDefault();
+       	 });
+
+       	 $('.header__main').children('h2').css('font-size', '2em');
+		})
+	</script>
 </body>
 </html>
