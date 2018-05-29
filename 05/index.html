@@ -2,9 +2,12 @@
 
   Para este ejercicio es necesario crear las acciones de click para ambos
   botones que se encuentran en la franja blanca.
+
+
   El botón con clase social__like debe hacer un toggle de la clase
   social__like--clicked. Es decir, que si la tiene, la debe eliminar y
   si no agregarla.
+
   El botón con clase social__link debe mostrar un alert con el
   alt de la imagen en donde se encuentra. Eso significa que por
   medio de traversing vas a acceder a esa información.
@@ -27,6 +30,7 @@
     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
   <link rel="stylesheet" href="../_assets/css/style.css">
+ <script src="../_assets/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
   <ul class="meals">
@@ -111,6 +115,30 @@
       </a>
     </li>
   </ul>
+
+  <script>
+    
+    $(document).ready(function(){
+
+      $('.social__btn').on('click', function(event){
+        event.preventDefault();
+      })
+      
+      $('.social__like').on('click', function(event){
+        $(this).toggleClass('social__like--clicked');
+      });
+
+      $('.social__link').on('click', function(event){
+        mostrar = $(this).parent('li').parent('ul').prev('img').attr('src');
+        alert(mostrar);
+      });
+
+
+    });
+  
+
+  
+  </script>
 
 </body>
 </html>
