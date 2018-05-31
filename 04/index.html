@@ -59,12 +59,16 @@
       $('.names').append('<li>' + nombres + '<a href="#" class="remove_name">Eliminar</a>'+'</li>');
 
       $('[href="#"]').on('click',function(event){
-          event.preventDefault();
+           event.preventDefault();
       });
 
-      $('.remove_name').on('click', function(event){
-        $(event.target).parent().remove();
-      })
+      // $('.names').on('click', 'a[href="#"]' function(event){
+        // event.preventDefault();
+      // })
+
+       $('.remove_name').on('click', function(event){
+         $(event.target).parent().remove();
+       })
 
     });
 
